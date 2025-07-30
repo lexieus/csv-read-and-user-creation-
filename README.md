@@ -1,35 +1,33 @@
-# csv-read-and-user-creation-
-Python script to read a CSV file and create user accounts.
-👤 User Account Creator from CSV
-This script automates the creation of user accounts by reading data from a CSV file and sending HTTP POST requests to an API endpoint.
+📊 CSV User Account Creator
+A Python script to read a CSV file and create user accounts by sending HTTP POST requests to an API endpoint.
 
 📄 Features
-Reads user data from a CSV file (users.csv).
+Reads user data from a CSV file (users.csv)
 
-Sends a POST request for each valid user to a mock API.
+Sends a POST request for each valid user to a mock API
 
-Skips rows with missing required fields (e.g., missing email).
+Skips rows with missing required fields (e.g., missing email)
 
-Logs errors and failed user creations to error_log.txt.
+Logs failed user creations and errors to error_log.txt
 
-Uses modular code structure for maintainability.
+Modular code structure for better readability and maintainability
 
 🛠️ Requirements
 Python 3.x
 
-requests module (Install via pip install requests)
+requests module (install via pip install requests)
 
 📦 Installation
 bash
 Copy
 Edit
-git clone <your-repo-url>
-cd <project-directory>
-pip install requests
+git clone https://github.com/your-username/csv-user-creator.git
+cd csv-user-creator
+pip install -r requirements.txt
 📁 CSV Format
-Input CSV file (users.csv) should have the following columns:
+The input CSV file (users.csv) should have the following columns:
 
-c
+csv
 Copy
 Edit
 name,email,role
@@ -45,33 +43,24 @@ Edit
 python create_users.py
 Make sure your users.csv file is in the same directory or update the script with the correct file path.
 
-📂 Files
-create_users.py: Main Python script.
-
-users.csv: Sample input CSV file.
-
-error_log.txt: Log file where failed user creation attempts are stored.
+📂 Project Files
+File	Description
+create_users.py	Main Python script
+users.csv	Sample input CSV file
+error_log.txt	Log file for failed user creations
+requirements.txt	Dependencies list
 
 🧪 Example Output
-Terminal:
+Terminal Output:
 
-bash
+sql
 Copy
 Edit
 Failed to create user: bob@example.com
 error_log.txt:
 
-txt
+pgsql
 Copy
 Edit
 2025-07-30 10:23:45,123 - Failed to create user bob@example.com - Status code: 400
 2025-07-30 10:23:45,456 - Skipping row due to missing required fields: {'name': 'Bob', 'email': '', 'role': 'user'}
-💡 Suggestions for Improvement
-Add command-line argument support for custom file paths.
-
-Validate email format using regex.
-
-Log successful creations optionally.
-
-Retry logic for transient API failures.
-
